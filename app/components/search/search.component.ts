@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// Need to import skyscanner service
+import { SkyscannerService } from '../../services/skyscanner.service';
 
 @Component({
     moduleId:module.id, // lets us use relative pathing for templateUrl
@@ -10,7 +10,14 @@ export class SearchComponent {
 
   searchQuery:string;
 
+  constructor(private _skyscannerService:SkyscannerService) {
+
+  }
+
   searchCities() {
+    this._skyscannerService.searchCities(this.searchQuery).subscribe(res => {
+      console.log(res);
+    });
     console.log(this.searchQuery)
   }
 }
