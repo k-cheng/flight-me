@@ -1,1 +1,31 @@
-SEARCH
+<div class="jumbotron">
+  <h1>SEARCH</h1>
+  <form>
+    <div class="form-group">
+      <h3>Origin Place: </h3>
+      <input class="form-control" type="text" placeholder="Type in the city where you're leaving from..." [(ngModel)]="searchQuery" name="searchQuery" (keyup)="searchCities()">
+      <br>
+      <h3>Destination Place: </h3>
+      <input class="form-control" type="text" placeholder="Search for the city you want to go to (aka wherever Kevin is)..." [(ngModel)]="searchQuery" name="searchQuery" (keyup)="searchCities()">
+      <br>
+
+      <ul class="list-inline">
+        <li>
+          <h3>Date of Departure</h3>
+          <input type="date">
+        </li>
+        <li>
+          <h3>Departure time</h3>
+            <select>
+              <option>3 PM</option>
+              <option>4 PM</option>
+              <option>5 PM</option>
+            </select>
+        </li>
+      </ul>
+    <div class="col-xs-4 col-sm-6">
+      <button type="submit" class="btn btn-default">Get Dem Flights!</button>
+    </div>
+    </div>
+  </form>
+</div>
